@@ -32,7 +32,11 @@ const ShoppingPage = () => {
       <h1 className="PageGreeting">Shop for Colors</h1>
       <div className="ColorsContainer">
         <div className="RedContainer">
-          <div className="card" style={{ backgroundColor: "Red" }}></div>
+          <div
+            className="card"
+            style={{ backgroundColor: "Red" }}
+            data-value="red"
+          ></div>
 
           <div className="AddButtonAndModify">
             <button className="AddToCart">Add To Cart</button>
@@ -52,7 +56,11 @@ const ShoppingPage = () => {
         </div>
 
         <div className="OliveContainer">
-          <div className="card" style={{ backgroundColor: "Olive" }}></div>
+          <div
+            className="card"
+            style={{ backgroundColor: "Olive" }}
+            data-value="olive"
+          ></div>
           <div className="AddButtonAndModify">
             <button className="AddToCart">Add To Cart</button>
             <div className="ModifyOliveCount">
@@ -70,7 +78,11 @@ const ShoppingPage = () => {
           </div>
         </div>
         <div className="GreenContainer">
-          <div className="card" style={{ backgroundColor: "Green" }}></div>
+          <div
+            className="card"
+            style={{ backgroundColor: "Green" }}
+            data-value="green"
+          ></div>
           <div className="AddButtonAndModify">
             <button className="AddToCart">Add To Cart</button>
             <div className="ModifyGreenCount">
@@ -88,7 +100,11 @@ const ShoppingPage = () => {
           </div>
         </div>
         <div className="BlueContainer">
-          <div className="card" style={{ backgroundColor: "Blue" }}></div>
+          <div
+            className="card"
+            style={{ backgroundColor: "Blue" }}
+            data-value="blue"
+          ></div>
           <div className="AddButtonAndModify">
             <button className="AddToCart">Add To Cart</button>
             <div className="ModifyBlueCount">
@@ -106,7 +122,11 @@ const ShoppingPage = () => {
           </div>
         </div>
         <div className="IndigoContainer">
-          <div className="card" style={{ backgroundColor: "Indigo" }}></div>
+          <div
+            className="card"
+            style={{ backgroundColor: "Indigo" }}
+            data-value="indigo"
+          ></div>
           <div className="AddButtonAndModify">
             <button className="AddToCart">Add To Cart</button>
             <div className="ModifyIndigoCount">
@@ -124,7 +144,11 @@ const ShoppingPage = () => {
           </div>
         </div>
         <div className="VioletContainer">
-          <div className="card" style={{ backgroundColor: "Violet" }}></div>
+          <div
+            className="card"
+            style={{ backgroundColor: "Violet" }}
+            data-value="Indigo"
+          ></div>
           <div className="AddButtonAndModify">
             <button className="AddToCart">Add To Cart</button>
             <div className="ModifyVioletCount">
