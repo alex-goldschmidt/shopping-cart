@@ -36,11 +36,13 @@ const ShoppingPage = () => {
             className="card"
             style={{ backgroundColor: "Red" }}
             data-value="red"
-          ></div>
+          >
+            Red
+          </div>
 
-          <div className="AddButtonAndModify">
-            <button className="AddToCart">Add To Cart</button>
-            <div className="ModifyRedCount">
+          <div className="Modify">
+            <button className="AddRedToCartButtonButton">Add To Cart</button>
+            <div>
               <span
                 className="SubtractRed"
                 onClick={() => setRedQuantity(RedQuantity - 1)}
@@ -60,10 +62,12 @@ const ShoppingPage = () => {
             className="card"
             style={{ backgroundColor: "Olive" }}
             data-value="olive"
-          ></div>
-          <div className="AddButtonAndModify">
-            <button className="AddToCart">Add To Cart</button>
-            <div className="ModifyOliveCount">
+          >
+            Olive
+          </div>
+          <div className="Modify">
+            <button className="AddOliveToCartButton">Add To Cart</button>
+            <div>
               <span
                 className="SubtractOlive"
                 onClick={() => setOliveQuantity(OliveQuantity - 1)}
@@ -77,15 +81,18 @@ const ShoppingPage = () => {
             </div>
           </div>
         </div>
+
         <div className="GreenContainer">
           <div
             className="card"
             style={{ backgroundColor: "Green" }}
             data-value="green"
-          ></div>
-          <div className="AddButtonAndModify">
-            <button className="AddToCart">Add To Cart</button>
-            <div className="ModifyGreenCount">
+          >
+            Green
+          </div>
+          <div className="Modify">
+            <button className="AddGreenToCartButton">Add To Cart</button>
+            <div>
               <span
                 className="SubtractGreen"
                 onClick={() => setGreenQuantity(GreenQuantity - 1)}
@@ -99,15 +106,18 @@ const ShoppingPage = () => {
             </div>
           </div>
         </div>
+
         <div className="BlueContainer">
           <div
             className="card"
             style={{ backgroundColor: "Blue" }}
             data-value="blue"
-          ></div>
-          <div className="AddButtonAndModify">
-            <button className="AddToCart">Add To Cart</button>
-            <div className="ModifyBlueCount">
+          >
+            Blue
+          </div>
+          <div className="Modify">
+            <button className="AddBlueToCartButton">Add To Cart</button>
+            <div>
               <span
                 className="SubtractBlue"
                 onClick={() => setBlueQuantity(BlueQuantity - 1)}
@@ -121,15 +131,18 @@ const ShoppingPage = () => {
             </div>
           </div>
         </div>
+
         <div className="IndigoContainer">
           <div
             className="card"
             style={{ backgroundColor: "Indigo" }}
             data-value="indigo"
-          ></div>
-          <div className="AddButtonAndModify">
-            <button className="AddToCart">Add To Cart</button>
-            <div className="ModifyIndigoCount">
+          >
+            Indigo
+          </div>
+          <div className="Modify">
+            <button className="AddIndigoToCartButton">Add To Cart</button>
+            <div>
               <span
                 className="SubtractIndigo"
                 onClick={() => setIndigoQuantity(IndigoQuantity - 1)}
@@ -143,15 +156,18 @@ const ShoppingPage = () => {
             </div>
           </div>
         </div>
+
         <div className="VioletContainer">
           <div
             className="card"
             style={{ backgroundColor: "Violet" }}
             data-value="Indigo"
-          ></div>
-          <div className="AddButtonAndModify">
-            <button className="AddToCart">Add To Cart</button>
-            <div className="ModifyVioletCount">
+          >
+            Violet
+          </div>
+          <div className="Modify">
+            <button className="AddVioletToCartButton">Add To Cart</button>
+            <div>
               <span
                 className="SubtractViolet"
                 onClick={() => setVioletQuantity(VioletQuantity - 1)}

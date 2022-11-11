@@ -1,0 +1,23 @@
+.CartContainer {
+  display: grid;
+  justify-content: center;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.ChosenItemsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 50px;
+}
+
+.ChosenItemsContainer div {
+  border: 1px solid black;
+  height: 175px;
+  width: 150px;
+}

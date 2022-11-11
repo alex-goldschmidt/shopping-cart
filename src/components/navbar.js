@@ -5,25 +5,18 @@ const Navbar = () => {
   return (
     <div className="outline">
       <div className="content">
-        <a className="leftside" href="#/">
-          <div className="heading-style-h6">Color Shop</div>
-        </a>
+        <div className="leftside">Color Shop</div>
 
         <div className="RightSide">
-          <Link to="/">
-            <a className="link" href="#/">
-              Home
-            </a>
+          <Link className="link" to="/">
+            Home
           </Link>
-          <Link to="/components/shopping">
-            <Link />
-            <a className="link" href="#/">
-              Shop
-            </a>
+          <Link className="link" to="/components/shopping">
+            Shop
           </Link>
-          <a className="link" href="#/">
+          <Link className="link" to="/components/cart">
             Cart
-          </a>
+          </Link>
         </div>
       </div>
     </div>
