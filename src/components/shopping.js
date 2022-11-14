@@ -1,5 +1,6 @@
 import "../styles/shopping.css";
 import { useState } from "react";
+import Cart from "../components/cart";
 
 const ShoppingPage = (props) => {
   const [RedQuantity, setRedQuantity] = useState(0);
@@ -29,7 +30,7 @@ const ShoppingPage = (props) => {
 
   return (
     <div className="Container">
-      <h1 className="PageGreeting">Color Shop</h1>
+      <Cart />
       <div className="ColorsContainer">
         <div className="RedContainer">
           <div className="card" style={{ backgroundColor: "Red" }}>

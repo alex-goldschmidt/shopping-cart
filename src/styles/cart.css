@@ -12,6 +12,9 @@ h1 {
   margin-right: 0;
   color: white;
   justify-content: center;
+  position: absolute;
+  right: 0;
+  margin-top: 30px;
 }
 .backdrop::before {
   color: white;
@@ -25,4 +28,9 @@ h1 {
 .modal {
   cursor: initial;
   display: flex;
+}
+
+.showCart {
+  position: absolute;
+  right: 0;
 }

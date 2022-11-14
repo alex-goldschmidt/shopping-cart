@@ -14,9 +14,6 @@ const Navbar = () => {
           <Link className="link" to="/components/shopping">
             Shop
           </Link>
-          <Link className="link" to="../components/cart">
-            Cart
-          </Link>
         </div>
       </div>
     </div>

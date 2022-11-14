@@ -10,8 +10,9 @@ const Cart = () => {
 
   return (
     <div className="container">
-      <h1>Shopping Cart</h1>
-      <button onClick={toggleModal}>OpenModal</button>
+      <button className="showCart" onClick={toggleModal}>
+        Shopping Cart
+      </button>
       <div className={isActive ? "backdrop" : null}>
         <div className={isActive ? "modal" : null}></div>
       </div>

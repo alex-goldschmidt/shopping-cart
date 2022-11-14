@@ -1,5 +1,5 @@
 .Container {
-  display: grid;
+  display: inline-grid;
   justify-content: center;
 }
 
@@ -16,7 +16,6 @@
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 50px;
   grid-row-gap: 50px;
-  padding-top: 100px;
 }
 
 .card {
