@@ -1,7 +1,7 @@
 import "../styles/shopping.css";
 import { useState } from "react";
 
-const ShoppingPage = () => {
+const ShoppingPage = (props) => {
   const [RedQuantity, setRedQuantity] = useState(0);
   const HandleRedIncrement = () => {
     setRedQuantity(RedQuantity + 1);
@@ -29,19 +29,15 @@ const ShoppingPage = () => {
 
   return (
     <div className="Container">
-      <h1 className="PageGreeting">Shop for Colors</h1>
+      <h1 className="PageGreeting">Color Shop</h1>
       <div className="ColorsContainer">
         <div className="RedContainer">
-          <div
-            className="card"
-            style={{ backgroundColor: "Red" }}
-            data-value="red"
-          >
+          <div className="card" style={{ backgroundColor: "Red" }}>
             Red
           </div>
 
           <div className="Modify">
-            <button className="AddRedToCartButtonButton">Add To Cart</button>
+            <button className="AddRedToCartButton">Add To Cart</button>
             <div>
               <span
                 className="SubtractRed"
@@ -58,11 +54,7 @@ const ShoppingPage = () => {
         </div>
 
         <div className="OliveContainer">
-          <div
-            className="card"
-            style={{ backgroundColor: "Olive" }}
-            data-value="olive"
-          >
+          <div className="card" style={{ backgroundColor: "Olive" }}>
             Olive
           </div>
           <div className="Modify">
@@ -83,11 +75,7 @@ const ShoppingPage = () => {
         </div>
 
         <div className="GreenContainer">
-          <div
-            className="card"
-            style={{ backgroundColor: "Green" }}
-            data-value="green"
-          >
+          <div className="card" style={{ backgroundColor: "Green" }}>
             Green
           </div>
           <div className="Modify">
@@ -108,11 +96,7 @@ const ShoppingPage = () => {
         </div>
 
         <div className="BlueContainer">
-          <div
-            className="card"
-            style={{ backgroundColor: "Blue" }}
-            data-value="blue"
-          >
+          <div className="card" style={{ backgroundColor: "Blue" }}>
             Blue
           </div>
           <div className="Modify">
@@ -133,11 +117,7 @@ const ShoppingPage = () => {
         </div>
 
         <div className="IndigoContainer">
-          <div
-            className="card"
-            style={{ backgroundColor: "Indigo" }}
-            data-value="indigo"
-          >
+          <div className="card" style={{ backgroundColor: "Indigo" }}>
             Indigo
           </div>
           <div className="Modify">
@@ -158,11 +138,7 @@ const ShoppingPage = () => {
         </div>
 
         <div className="VioletContainer">
-          <div
-            className="card"
-            style={{ backgroundColor: "Violet" }}
-            data-value="Indigo"
-          >
+          <div className="card" style={{ backgroundColor: "Violet" }}>
             Violet
           </div>
           <div className="Modify">

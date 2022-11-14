@@ -1,19 +1,19 @@
-//import { useState } from "react";
-import "../styles/cart.css";
-import ShoppingPage from "../components/shopping";
 import { useState } from "react";
+import "../styles/cart.css";
 
 const Cart = () => {
+  const [isActive, setActive] = useState(false);
+  const toggleModal = (e) => {
+    e.stopPropagation();
+    setActive(!isActive);
+  };
+
   return (
-    <div className="CartContainer">
+    <div className="container">
       <h1>Shopping Cart</h1>
-      <div className="ChosenItemsContainer">
-        <div className="dummy">dummy</div>
-        <div className="dummy">dummy</div>
-        <div className="dummy">dummy</div>
-        <div className="dummy">dummy</div>
-        <div className="dummy">dummy</div>
-        <div className="dummy">dummy</div>
+      <button onClick={toggleModal}>OpenModal</button>
+      <div className={isActive ? "backdrop" : null}>
+        <div className={isActive ? "modal" : null}></div>
       </div>
     </div>
   );

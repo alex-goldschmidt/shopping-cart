@@ -1,23 +1,28 @@
-.CartContainer {
-  display: grid;
-  justify-content: center;
-}
-
 h1 {
   display: flex;
   justify-content: center;
 }
 
-.ChosenItemsContainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 50px;
+.backdrop {
+  display: flex;
+  background: #00000088;
+  height: 500px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: 0;
+  color: white;
+  justify-content: center;
+}
+.backdrop::before {
+  color: white;
+  content: "Cart: ";
+  height: 500px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
 }
 
-.ChosenItemsContainer div {
-  border: 1px solid black;
-  height: 175px;
-  width: 150px;
+.modal {
+  cursor: initial;
+  display: flex;
 }
