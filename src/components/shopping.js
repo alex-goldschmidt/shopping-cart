@@ -2,7 +2,26 @@ import "../styles/shopping.css";
 import { useState } from "react";
 import Cart from "../components/cart";
 
-const ShoppingPage = (props) => {
+let nextColor = 0;
+const ShoppingPage = () => {
+  const [Red, setRed] = useState("Red");
+  const [RedArray, setRedArray] = useState([Red]);
+
+  const [Olive, setOlive] = useState("Olive");
+  const [OliveArray, setOliveArray] = useState([Olive]);
+
+  const [Green, setGreen] = useState("Green");
+  const [GreenArray, setGreenArray] = useState([Green]);
+
+  const [Blue, setBlue] = useState("Blue");
+  const [BlueArray, setBlueArray] = useState([Blue]);
+
+  const [Indigo, setIndigo] = useState("Indigo");
+  const [IndigoArray, setIndigoArray] = useState([Indigo]);
+
+  const [Violet, setViolet] = useState("Violet");
+  const [VioletArray, setVioletArray] = useState([Violet]);
+
   const [RedQuantity, setRedQuantity] = useState(0);
   const HandleRedIncrement = () => {
     setRedQuantity(RedQuantity + 1);
@@ -38,7 +57,16 @@ const ShoppingPage = (props) => {
           </div>
 
           <div className="Modify">
-            <button className="AddRedToCartButton">Add To Cart</button>
+            <button
+              className="AddRedToCartButton"
+              onClick={() => {
+                setRed("Red");
+                setRedArray([...RedArray, { id: nextColor++, name: Red }]);
+                console.log(RedArray);
+              }}
+            >
+              Add To Cart
+            </button>
             <div>
               <span
                 className="SubtractRed"
@@ -59,7 +87,19 @@ const ShoppingPage = (props) => {
             Olive
           </div>
           <div className="Modify">
-            <button className="AddOliveToCartButton">Add To Cart</button>
+            <button
+              className="AddOliveToCartButton"
+              onClick={() => {
+                setOlive("Olive");
+                setOliveArray([
+                  ...OliveArray,
+                  { id: nextColor++, name: Olive },
+                ]);
+                console.log(OliveArray);
+              }}
+            >
+              Add To Cart
+            </button>
             <div>
               <span
                 className="SubtractOlive"
@@ -80,7 +120,19 @@ const ShoppingPage = (props) => {
             Green
           </div>
           <div className="Modify">
-            <button className="AddGreenToCartButton">Add To Cart</button>
+            <button
+              className="AddGreenToCartButton"
+              onClick={() => {
+                setGreen("Green");
+                setGreenArray([
+                  ...GreenArray,
+                  { id: nextColor++, name: Green },
+                ]);
+                console.log(GreenArray);
+              }}
+            >
+              Add To Cart
+            </button>
             <div>
               <span
                 className="SubtractGreen"
@@ -101,7 +153,16 @@ const ShoppingPage = (props) => {
             Blue
           </div>
           <div className="Modify">
-            <button className="AddBlueToCartButton">Add To Cart</button>
+            <button
+              className="AddBlueToCartButton"
+              onClick={() => {
+                setBlue("Blue");
+                setBlueArray([...BlueArray, { id: nextColor++, name: Blue }]);
+                console.log(BlueArray);
+              }}
+            >
+              Add To Cart
+            </button>
             <div>
               <span
                 className="SubtractBlue"
@@ -122,7 +183,19 @@ const ShoppingPage = (props) => {
             Indigo
           </div>
           <div className="Modify">
-            <button className="AddIndigoToCartButton">Add To Cart</button>
+            <button
+              className="AddIndigoToCartButton"
+              onClick={() => {
+                setIndigo("Indigo");
+                setIndigoArray([
+                  ...IndigoArray,
+                  { id: nextColor++, name: Indigo },
+                ]);
+                console.log(IndigoArray);
+              }}
+            >
+              Add To Cart
+            </button>
             <div>
               <span
                 className="SubtractIndigo"
@@ -143,7 +216,19 @@ const ShoppingPage = (props) => {
             Violet
           </div>
           <div className="Modify">
-            <button className="AddVioletToCartButton">Add To Cart</button>
+            <button
+              className="AddVioletToCartButton"
+              onClick={() => {
+                setViolet("Violet");
+                setVioletArray([
+                  ...VioletArray,
+                  { id: nextColor++, name: Violet },
+                ]);
+                console.log(VioletArray);
+              }}
+            >
+              Add To Cart
+            </button>
             <div>
               <span
                 className="SubtractViolet"
