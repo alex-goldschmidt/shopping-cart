@@ -4,22 +4,22 @@ import Cart from "../components/cart";
 
 let nextColor = 0;
 const ShoppingPage = () => {
-  const [Red, setRed] = useState("Red");
+  const [Red, setRed] = useState("");
   const [RedArray, setRedArray] = useState([Red]);
 
-  const [Olive, setOlive] = useState("Olive");
+  const [Olive, setOlive] = useState("");
   const [OliveArray, setOliveArray] = useState([Olive]);
 
-  const [Green, setGreen] = useState("Green");
+  const [Green, setGreen] = useState("");
   const [GreenArray, setGreenArray] = useState([Green]);
 
-  const [Blue, setBlue] = useState("Blue");
+  const [Blue, setBlue] = useState("");
   const [BlueArray, setBlueArray] = useState([Blue]);
 
-  const [Indigo, setIndigo] = useState("Indigo");
+  const [Indigo, setIndigo] = useState("");
   const [IndigoArray, setIndigoArray] = useState([Indigo]);
 
-  const [Violet, setViolet] = useState("Violet");
+  const [Violet, setViolet] = useState("");
   const [VioletArray, setVioletArray] = useState([Violet]);
 
   const [RedQuantity, setRedQuantity] = useState(0);
@@ -49,7 +49,14 @@ const ShoppingPage = () => {
 
   return (
     <div className="Container">
-      <Cart />
+      <Cart
+        RedProp={Red}
+        OliveProp={Olive}
+        GreenProp={Green}
+        BlueProp={Blue}
+        IndigoProp={Indigo}
+        VioletProp={Violet}
+      />
       <div className="ColorsContainer">
         <div className="RedContainer">
           <div className="card" style={{ backgroundColor: "Red" }}>
