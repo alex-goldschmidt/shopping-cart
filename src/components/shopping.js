@@ -1,26 +1,26 @@
 import "../styles/shopping.css";
-import { useState } from "react";
 import Cart from "../components/cart";
+import { useState } from "react";
 
 let nextColor = 0;
-const ShoppingPage = () => {
+const ShoppingPage = (props) => {
   const [Red, setRed] = useState("");
-  const [RedArray, setRedArray] = useState([Red]);
+  const [RedArray, setRedArray] = useState([]);
 
   const [Olive, setOlive] = useState("");
-  const [OliveArray, setOliveArray] = useState([Olive]);
+  const [OliveArray, setOliveArray] = useState([]);
 
   const [Green, setGreen] = useState("");
-  const [GreenArray, setGreenArray] = useState([Green]);
+  const [GreenArray, setGreenArray] = useState([]);
 
   const [Blue, setBlue] = useState("");
-  const [BlueArray, setBlueArray] = useState([Blue]);
+  const [BlueArray, setBlueArray] = useState([]);
 
   const [Indigo, setIndigo] = useState("");
-  const [IndigoArray, setIndigoArray] = useState([Indigo]);
+  const [IndigoArray, setIndigoArray] = useState([]);
 
   const [Violet, setViolet] = useState("");
-  const [VioletArray, setVioletArray] = useState([Violet]);
+  const [VioletArray, setVioletArray] = useState([]);
 
   const [RedQuantity, setRedQuantity] = useState(0);
   const HandleRedIncrement = () => {
@@ -46,16 +46,24 @@ const ShoppingPage = () => {
   const HandleVioletIncrement = () => {
     setVioletQuantity(VioletQuantity + 1);
   };
+  let [quantityCount, setQuantityCount] = useState(0);
 
   return (
     <div className="Container">
       <Cart
+        quantityProp={quantityCount}
         RedProp={Red}
+        RedCount={RedArray.length}
         OliveProp={Olive}
+        OliveCount={OliveArray.length}
         GreenProp={Green}
+        GreenCount={GreenArray.length}
         BlueProp={Blue}
+        BlueCount={BlueArray.length}
         IndigoProp={Indigo}
+        IndigoCount={IndigoArray.length}
         VioletProp={Violet}
+        VioletCount={VioletArray.length}
       />
       <div className="ColorsContainer">
         <div className="RedContainer">
@@ -70,6 +78,7 @@ const ShoppingPage = () => {
                 setRed("Red");
                 setRedArray([...RedArray, { id: nextColor++, name: Red }]);
                 console.log(RedArray);
+                setQuantityCount(quantityCount + 1);
               }}
             >
               Add To Cart
@@ -82,7 +91,15 @@ const ShoppingPage = () => {
                 -
               </span>
               {RedQuantity}
-              <span onClick={HandleRedIncrement} className="more">
+              <span
+                onClick={() => {
+                  HandleRedIncrement();
+                  setQuantityCount(quantityCount + 1);
+                  setRedArray([...RedArray, { id: nextColor++, name: Red }]);
+                  console.log(RedArray);
+                }}
+                className="more"
+              >
                 +
               </span>
             </div>
@@ -103,6 +120,7 @@ const ShoppingPage = () => {
                   { id: nextColor++, name: Olive },
                 ]);
                 console.log(OliveArray);
+                setQuantityCount(quantityCount + 1);
               }}
             >
               Add To Cart
@@ -115,7 +133,18 @@ const ShoppingPage = () => {
                 -
               </span>
               {OliveQuantity}
-              <span onClick={HandleOliveIncrement} className="more">
+              <span
+                onClick={() => {
+                  HandleOliveIncrement();
+                  setQuantityCount(quantityCount + 1);
+                  setOliveArray([
+                    ...OliveArray,
+                    { id: nextColor++, name: Olive },
+                  ]);
+                  console.log(OliveArray);
+                }}
+                className="more"
+              >
                 +
               </span>
             </div>
@@ -136,6 +165,7 @@ const ShoppingPage = () => {
                   { id: nextColor++, name: Green },
                 ]);
                 console.log(GreenArray);
+                setQuantityCount(quantityCount + 1);
               }}
             >
               Add To Cart
@@ -148,7 +178,18 @@ const ShoppingPage = () => {
                 -
               </span>
               {GreenQuantity}
-              <span onClick={HandleGreenIncrement} className="more">
+              <span
+                onClick={() => {
+                  HandleGreenIncrement();
+                  setQuantityCount(quantityCount + 1);
+                  setGreenArray([
+                    ...GreenArray,
+                    { id: nextColor++, name: Green },
+                  ]);
+                  console.log(GreenArray);
+                }}
+                className="more"
+              >
                 +
               </span>
             </div>
@@ -166,6 +207,7 @@ const ShoppingPage = () => {
                 setBlue("Blue");
                 setBlueArray([...BlueArray, { id: nextColor++, name: Blue }]);
                 console.log(BlueArray);
+                setQuantityCount(quantityCount + 1);
               }}
             >
               Add To Cart
@@ -178,7 +220,15 @@ const ShoppingPage = () => {
                 -
               </span>
               {BlueQuantity}
-              <span onClick={HandleBlueIncrement} className="more">
+              <span
+                onClick={() => {
+                  HandleBlueIncrement();
+                  setQuantityCount(quantityCount + 1);
+                  setBlueArray([...BlueArray, { id: nextColor++, name: Blue }]);
+                  console.log(BlueArray);
+                }}
+                className="more"
+              >
                 +
               </span>
             </div>
@@ -199,6 +249,7 @@ const ShoppingPage = () => {
                   { id: nextColor++, name: Indigo },
                 ]);
                 console.log(IndigoArray);
+                setQuantityCount(quantityCount + 1);
               }}
             >
               Add To Cart
@@ -211,7 +262,18 @@ const ShoppingPage = () => {
                 -
               </span>
               {IndigoQuantity}
-              <span onClick={HandleIndigoIncrement} className="more">
+              <span
+                onClick={() => {
+                  HandleIndigoIncrement();
+                  setQuantityCount(quantityCount + 1);
+                  setIndigoArray([
+                    ...IndigoArray,
+                    { id: nextColor++, name: Indigo },
+                  ]);
+                  console.log(IndigoArray);
+                }}
+                className="more"
+              >
                 +
               </span>
             </div>
@@ -232,6 +294,7 @@ const ShoppingPage = () => {
                   { id: nextColor++, name: Violet },
                 ]);
                 console.log(VioletArray);
+                setQuantityCount(quantityCount + 1);
               }}
             >
               Add To Cart
@@ -244,7 +307,18 @@ const ShoppingPage = () => {
                 -
               </span>
               {VioletQuantity}
-              <span onClick={HandleVioletIncrement} className="more">
+              <span
+                onClick={() => {
+                  HandleVioletIncrement();
+                  setQuantityCount(quantityCount + 1);
+                  setVioletArray([
+                    ...VioletArray,
+                    { id: nextColor++, name: Violet },
+                  ]);
+                  console.log(VioletArray);
+                }}
+                className="more"
+              >
                 +
               </span>
             </div>
