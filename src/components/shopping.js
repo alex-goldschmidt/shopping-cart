@@ -46,6 +46,61 @@ const ShoppingPage = (props) => {
   const HandleVioletIncrement = () => {
     setVioletQuantity(VioletQuantity + 1);
   };
+
+  const removeRed = (index) => {
+    setRedArray((prevState) => {
+      const redIndexes = [...prevState];
+      redIndexes.splice(index, 1);
+      if (RedQuantity === 0) setRed("");
+      return redIndexes;
+    });
+  };
+
+  const removeOlive = (index) => {
+    setOliveArray((prevState) => {
+      const oliveIndexes = [...prevState];
+      oliveIndexes.splice(index, 1);
+      if (OliveQuantity === 0) setOlive("");
+      return oliveIndexes;
+    });
+  };
+
+  const removeGreen = (index) => {
+    setGreenArray((prevState) => {
+      const greenIndexes = [...prevState];
+      greenIndexes.splice(index, 1);
+      if (GreenQuantity === 0) setGreen("");
+      return greenIndexes;
+    });
+  };
+
+  const removeBlue = (index) => {
+    setRedArray((prevState) => {
+      const blueIndexes = [...prevState];
+      blueIndexes.splice(index, 1);
+      if (BlueQuantity === 0) setBlue("");
+      return blueIndexes;
+    });
+  };
+
+  const removeIndigo = (index) => {
+    setIndigoArray((prevState) => {
+      const indigoIndexes = [...prevState];
+      indigoIndexes.splice(index, 1);
+      if (IndigoQuantity === 0) setIndigo("");
+      return indigoIndexes;
+    });
+  };
+
+  const removeViolet = (index) => {
+    setVioletArray((prevState) => {
+      const violetIndexes = [...prevState];
+      violetIndexes.splice(index, 1);
+      if (VioletQuantity === 0) setViolet("");
+      return violetIndexes;
+    });
+  };
+
   let [quantityCount, setQuantityCount] = useState(0);
 
   return (
@@ -79,6 +134,7 @@ const ShoppingPage = (props) => {
                 setRedArray([...RedArray, { id: nextColor++, name: Red }]);
                 console.log(RedArray);
                 setQuantityCount(quantityCount + 1);
+                HandleRedIncrement();
               }}
             >
               Add To Cart
@@ -86,7 +142,11 @@ const ShoppingPage = (props) => {
             <div>
               <span
                 className="SubtractRed"
-                onClick={() => setRedQuantity(RedQuantity - 1)}
+                onClick={() => {
+                  setRedQuantity(RedQuantity - 1);
+                  removeRed();
+                  setQuantityCount(quantityCount - 1);
+                }}
               >
                 -
               </span>
@@ -121,6 +181,7 @@ const ShoppingPage = (props) => {
                 ]);
                 console.log(OliveArray);
                 setQuantityCount(quantityCount + 1);
+                HandleOliveIncrement();
               }}
             >
               Add To Cart
@@ -128,7 +189,11 @@ const ShoppingPage = (props) => {
             <div>
               <span
                 className="SubtractOlive"
-                onClick={() => setOliveQuantity(OliveQuantity - 1)}
+                onClick={() => {
+                  setOliveQuantity(OliveQuantity - 1);
+                  removeOlive();
+                  setQuantityCount(quantityCount - 1);
+                }}
               >
                 -
               </span>
@@ -166,6 +231,7 @@ const ShoppingPage = (props) => {
                 ]);
                 console.log(GreenArray);
                 setQuantityCount(quantityCount + 1);
+                HandleGreenIncrement();
               }}
             >
               Add To Cart
@@ -173,7 +239,11 @@ const ShoppingPage = (props) => {
             <div>
               <span
                 className="SubtractGreen"
-                onClick={() => setGreenQuantity(GreenQuantity - 1)}
+                onClick={() => {
+                  setGreenQuantity(GreenQuantity - 1);
+                  removeGreen();
+                  setQuantityCount(quantityCount - 1);
+                }}
               >
                 -
               </span>
@@ -208,6 +278,7 @@ const ShoppingPage = (props) => {
                 setBlueArray([...BlueArray, { id: nextColor++, name: Blue }]);
                 console.log(BlueArray);
                 setQuantityCount(quantityCount + 1);
+                HandleBlueIncrement();
               }}
             >
               Add To Cart
@@ -215,7 +286,11 @@ const ShoppingPage = (props) => {
             <div>
               <span
                 className="SubtractBlue"
-                onClick={() => setBlueQuantity(BlueQuantity - 1)}
+                onClick={() => {
+                  setBlueQuantity(BlueQuantity - 1);
+                  removeBlue();
+                  setQuantityCount(quantityCount - 1);
+                }}
               >
                 -
               </span>
@@ -250,6 +325,7 @@ const ShoppingPage = (props) => {
                 ]);
                 console.log(IndigoArray);
                 setQuantityCount(quantityCount + 1);
+                HandleIndigoIncrement();
               }}
             >
               Add To Cart
@@ -257,7 +333,11 @@ const ShoppingPage = (props) => {
             <div>
               <span
                 className="SubtractIndigo"
-                onClick={() => setIndigoQuantity(IndigoQuantity - 1)}
+                onClick={() => {
+                  setIndigoQuantity(IndigoQuantity - 1);
+                  removeIndigo();
+                  setQuantityCount(quantityCount - 1);
+                }}
               >
                 -
               </span>
@@ -295,6 +375,7 @@ const ShoppingPage = (props) => {
                 ]);
                 console.log(VioletArray);
                 setQuantityCount(quantityCount + 1);
+                HandleVioletIncrement();
               }}
             >
               Add To Cart
@@ -302,7 +383,11 @@ const ShoppingPage = (props) => {
             <div>
               <span
                 className="SubtractViolet"
-                onClick={() => setVioletQuantity(VioletQuantity - 1)}
+                onClick={() => {
+                  setVioletQuantity(VioletQuantity - 1);
+                  removeViolet();
+                  setQuantityCount(quantityCount - 1);
+                }}
               >
                 -
               </span>
