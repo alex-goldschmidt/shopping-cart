@@ -51,9 +51,9 @@ const ShoppingPage = (props) => {
 
   const removeRedFromCart = (index) => {
     setRedArray((prevState) => {
-      const redIndexes = [...prevState];
-      redIndexes.splice(index, 1);
-      if (RedQuantity === 0) setRed("");
+      const redIndexes = [...prevState]; //Create new array based on current {color} items in array
+      redIndexes.splice(index, 1); // remove {color} item by index
+      if (RedQuantity === 0) setRed(""); // when no {color} in the cart, remove the word "${color}" from cart
       return redIndexes;
     });
   };

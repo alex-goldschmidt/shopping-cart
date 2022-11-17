@@ -14,3 +14,16 @@ describe("App component", () => {
     );
   });
 });
+
+describe("button in App component", () => {
+  it("renders correct button text", () => {
+    render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
+    expect(screen.getByRole("button").textContent).toMatch(
+      /go to shopping page/i
+    );
+  });
+});

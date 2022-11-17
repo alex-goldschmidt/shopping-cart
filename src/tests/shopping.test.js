@@ -2,13 +2,15 @@ import { render, screen } from "@testing-library/react";
 import ShoppingPage from "../components/shopping";
 import { BrowserRouter } from "react-router-dom";
 
-describe("ShoppingPage component", () => {
-  it("renders correct heading", () => {
+describe("button in ShoppingPage component", () => {
+  it("renders correct button text", () => {
     render(
       <BrowserRouter>
         <ShoppingPage />
       </BrowserRouter>
     );
-    expect(screen.getByRole("heading").textContent).toMatch(/shop for colors/i);
+    expect(screen.getAllByPlaceholderText("button").textContent).toMatch(
+      /add to cart/i
+    );
   });
 });
