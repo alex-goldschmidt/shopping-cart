@@ -23,8 +23,10 @@ const ShoppingPage = (props) => {
   const [VioletArray, setVioletArray] = useState([]);
 
   const [RedQuantity, setRedQuantity] = useState(0);
+
   const HandleRedIncrement = () => {
     setRedQuantity(RedQuantity + 1);
+    if (RedQuantity === 0) return;
   };
   const [OliveQuantity, setOliveQuantity] = useState(0);
   const HandleOliveIncrement = () => {
@@ -47,7 +49,7 @@ const ShoppingPage = (props) => {
     setVioletQuantity(VioletQuantity + 1);
   };
 
-  const removeRed = (index) => {
+  const removeRedFromCart = (index) => {
     setRedArray((prevState) => {
       const redIndexes = [...prevState];
       redIndexes.splice(index, 1);
@@ -56,7 +58,7 @@ const ShoppingPage = (props) => {
     });
   };
 
-  const removeOlive = (index) => {
+  const removeOliveFromCart = (index) => {
     setOliveArray((prevState) => {
       const oliveIndexes = [...prevState];
       oliveIndexes.splice(index, 1);
@@ -65,7 +67,7 @@ const ShoppingPage = (props) => {
     });
   };
 
-  const removeGreen = (index) => {
+  const removeGreenFromCart = (index) => {
     setGreenArray((prevState) => {
       const greenIndexes = [...prevState];
       greenIndexes.splice(index, 1);
@@ -74,8 +76,8 @@ const ShoppingPage = (props) => {
     });
   };
 
-  const removeBlue = (index) => {
-    setRedArray((prevState) => {
+  const removeBlueFromCart = (index) => {
+    setBlueArray((prevState) => {
       const blueIndexes = [...prevState];
       blueIndexes.splice(index, 1);
       if (BlueQuantity === 0) setBlue("");
@@ -83,7 +85,7 @@ const ShoppingPage = (props) => {
     });
   };
 
-  const removeIndigo = (index) => {
+  const removeIndigoFromCart = (index) => {
     setIndigoArray((prevState) => {
       const indigoIndexes = [...prevState];
       indigoIndexes.splice(index, 1);
@@ -92,7 +94,7 @@ const ShoppingPage = (props) => {
     });
   };
 
-  const removeViolet = (index) => {
+  const removeVioletFromCart = (index) => {
     setVioletArray((prevState) => {
       const violetIndexes = [...prevState];
       violetIndexes.splice(index, 1);
@@ -101,7 +103,7 @@ const ShoppingPage = (props) => {
     });
   };
 
-  let [quantityCount, setQuantityCount] = useState(0);
+  const [quantityCount, setQuantityCount] = useState(0);
 
   return (
     <div className="Container">
@@ -132,7 +134,6 @@ const ShoppingPage = (props) => {
               onClick={() => {
                 setRed("Red");
                 setRedArray([...RedArray, { id: nextColor++, name: Red }]);
-                console.log(RedArray);
                 setQuantityCount(quantityCount + 1);
                 HandleRedIncrement();
               }}
@@ -143,9 +144,9 @@ const ShoppingPage = (props) => {
               <span
                 className="SubtractRed"
                 onClick={() => {
-                  setRedQuantity(RedQuantity - 1);
-                  removeRed();
-                  setQuantityCount(quantityCount - 1);
+                  setRedQuantity(Math.max(RedQuantity - 1, 0));
+                  setQuantityCount(Math.max(quantityCount - 1, 0));
+                  removeRedFromCart();
                 }}
               >
                 -
@@ -156,7 +157,6 @@ const ShoppingPage = (props) => {
                   HandleRedIncrement();
                   setQuantityCount(quantityCount + 1);
                   setRedArray([...RedArray, { id: nextColor++, name: Red }]);
-                  console.log(RedArray);
                 }}
                 className="more"
               >
@@ -179,7 +179,6 @@ const ShoppingPage = (props) => {
                   ...OliveArray,
                   { id: nextColor++, name: Olive },
                 ]);
-                console.log(OliveArray);
                 setQuantityCount(quantityCount + 1);
                 HandleOliveIncrement();
               }}
@@ -190,9 +189,9 @@ const ShoppingPage = (props) => {
               <span
                 className="SubtractOlive"
                 onClick={() => {
-                  setOliveQuantity(OliveQuantity - 1);
-                  removeOlive();
-                  setQuantityCount(quantityCount - 1);
+                  setOliveQuantity(Math.max(OliveQuantity - 1, 0));
+                  setQuantityCount(Math.max(quantityCount - 1, 0));
+                  removeOliveFromCart();
                 }}
               >
                 -
@@ -206,7 +205,6 @@ const ShoppingPage = (props) => {
                     ...OliveArray,
                     { id: nextColor++, name: Olive },
                   ]);
-                  console.log(OliveArray);
                 }}
                 className="more"
               >
@@ -229,7 +227,6 @@ const ShoppingPage = (props) => {
                   ...GreenArray,
                   { id: nextColor++, name: Green },
                 ]);
-                console.log(GreenArray);
                 setQuantityCount(quantityCount + 1);
                 HandleGreenIncrement();
               }}
@@ -240,9 +237,9 @@ const ShoppingPage = (props) => {
               <span
                 className="SubtractGreen"
                 onClick={() => {
-                  setGreenQuantity(GreenQuantity - 1);
-                  removeGreen();
-                  setQuantityCount(quantityCount - 1);
+                  setGreenQuantity(Math.max(GreenQuantity - 1, 0));
+                  setQuantityCount(Math.max(quantityCount - 1, 0));
+                  removeGreenFromCart();
                 }}
               >
                 -
@@ -256,7 +253,6 @@ const ShoppingPage = (props) => {
                     ...GreenArray,
                     { id: nextColor++, name: Green },
                   ]);
-                  console.log(GreenArray);
                 }}
                 className="more"
               >
@@ -276,7 +272,6 @@ const ShoppingPage = (props) => {
               onClick={() => {
                 setBlue("Blue");
                 setBlueArray([...BlueArray, { id: nextColor++, name: Blue }]);
-                console.log(BlueArray);
                 setQuantityCount(quantityCount + 1);
                 HandleBlueIncrement();
               }}
@@ -287,9 +282,9 @@ const ShoppingPage = (props) => {
               <span
                 className="SubtractBlue"
                 onClick={() => {
-                  setBlueQuantity(BlueQuantity - 1);
-                  removeBlue();
-                  setQuantityCount(quantityCount - 1);
+                  setBlueQuantity(Math.max(BlueQuantity - 1, 0));
+                  setQuantityCount(Math.max(quantityCount - 1, 0));
+                  removeBlueFromCart();
                 }}
               >
                 -
@@ -300,7 +295,6 @@ const ShoppingPage = (props) => {
                   HandleBlueIncrement();
                   setQuantityCount(quantityCount + 1);
                   setBlueArray([...BlueArray, { id: nextColor++, name: Blue }]);
-                  console.log(BlueArray);
                 }}
                 className="more"
               >
@@ -323,7 +317,6 @@ const ShoppingPage = (props) => {
                   ...IndigoArray,
                   { id: nextColor++, name: Indigo },
                 ]);
-                console.log(IndigoArray);
                 setQuantityCount(quantityCount + 1);
                 HandleIndigoIncrement();
               }}
@@ -334,9 +327,9 @@ const ShoppingPage = (props) => {
               <span
                 className="SubtractIndigo"
                 onClick={() => {
-                  setIndigoQuantity(IndigoQuantity - 1);
-                  removeIndigo();
-                  setQuantityCount(quantityCount - 1);
+                  setIndigoQuantity(Math.max(IndigoQuantity - 1, 0));
+                  setQuantityCount(Math.max(quantityCount - 1, 0));
+                  removeIndigoFromCart();
                 }}
               >
                 -
@@ -350,7 +343,6 @@ const ShoppingPage = (props) => {
                     ...IndigoArray,
                     { id: nextColor++, name: Indigo },
                   ]);
-                  console.log(IndigoArray);
                 }}
                 className="more"
               >
@@ -373,7 +365,6 @@ const ShoppingPage = (props) => {
                   ...VioletArray,
                   { id: nextColor++, name: Violet },
                 ]);
-                console.log(VioletArray);
                 setQuantityCount(quantityCount + 1);
                 HandleVioletIncrement();
               }}
@@ -384,9 +375,9 @@ const ShoppingPage = (props) => {
               <span
                 className="SubtractViolet"
                 onClick={() => {
-                  setVioletQuantity(VioletQuantity - 1);
-                  removeViolet();
-                  setQuantityCount(quantityCount - 1);
+                  setVioletQuantity(Math.max(VioletQuantity - 1, 0));
+                  setQuantityCount(Math.max(quantityCount - 1, 0));
+                  removeVioletFromCart();
                 }}
               >
                 -
@@ -400,7 +391,6 @@ const ShoppingPage = (props) => {
                     ...VioletArray,
                     { id: nextColor++, name: Violet },
                   ]);
-                  console.log(VioletArray);
                 }}
                 className="more"
               >
